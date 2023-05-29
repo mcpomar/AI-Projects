@@ -10,12 +10,12 @@ from sklearn.metrics import accuracy_score
 dataset = pd.read_csv("data.csv")  # Replace "data.csv" with your actual dataset filename
 
 # Select the relevant columns for prediction
-columns = ['experience', 'resignation', 'gender', 'age', 'industry', 'profession', 'traffic', 'coach', 'head_gender', 'greywage', 'way', 'extraversion', 'independ', 'selfcontrol', 'anxiety', 'novator']
+columns = ['experience', 'event', 'gender', 'age', 'industry', 'profession', 'traffic', 'coach', 'head_gender', 'greywage', 'way', 'extraversion', 'independ', 'selfcontrol', 'anxiety', 'novator']
 data = dataset[columns]
 
 # Split the dataset into input features (X) and target variable (y)
-X = data.drop("resignation", axis=1)
-y = data["resignation"]
+X = data.drop("event", axis=1)
+y = data["event"]
 
 # Convert categorical variables to numeric using one-hot encoding
 X = pd.get_dummies(X)
